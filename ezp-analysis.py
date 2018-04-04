@@ -1,5 +1,6 @@
 # Robin Camille Davis
 # 2014-03-28
+#Updated by Josephine Choi so that it will run with Python 3
 
 ## Script runs over all EZproxy-generated logs in a given directory. Best used with SPU logs.
 
@@ -30,7 +31,7 @@ import re, sys, glob, os
 def main():
     """EZproxy log analysis: count up student and faculty/staff sessions"""
 
-    print 'EZproxy analysis beginning... This may take a few minutes.\n'
+    print ('EZproxy analysis beginning... This may take a few minutes.\n')
 
     dirname = sys.argv[1] #must be a directory
     output = sys.argv[2] #must be CSV
@@ -45,7 +46,7 @@ total off-campus')
 
     for filename in glob.glob(os.path.join(dirname, '*.log')): #opens all log files in directory
 
-        print 'Now analyzing', filename
+        print ('Now analyzing', filename)
         
         lines = [line.strip() for line in open(filename)] #reads file
         
@@ -117,7 +118,7 @@ total off-campus')
 
 
     outfile.close
-    print '\nOutput:', outfile
+    print ('\nOutput:', outfile)
 
 main()
 
